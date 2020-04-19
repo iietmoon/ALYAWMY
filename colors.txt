@@ -1,0 +1,85 @@
+blue color : #0084ff
+
+first Text_color : #1d1927
+
+second Text_color : #7d7d7d
+
+yellow color : #ffba43
+
+red color : #fa001c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<View>
+
+      {/* The View of the Article */}
+      <View style={styles.View} >
+
+        {/* The Content of the Article */}
+        <View style={styles.ArtView}>
+
+          {/* The Image of the Article */}
+          <TouchableHighlight>
+            <View style={styles.LeftView}>
+              <Image style={styles.ArtImg} source={{ uri: 'https://www.2m.ma/site_media/uploads/imagesarticle/2020/4/1/2020-04-01-19-15-53.006839gdssj_6jwF0Ov.image_corps_article.jpg' }} />
+            </View>
+          </TouchableHighlight>
+
+          {/* The Title / Source / share of the Article */}
+          <View style={styles.RightView}>
+
+            {/* The Title of the Article */}
+            <TouchableHighlight>
+              <Text style={styles.ArtTitle}>Marouane, patient guéri du Covid-19, raconte son expérience et appelle</Text>
+            </TouchableHighlight>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Text style={styles.ArtSrc}>Par: lesiteinfo.com</Text>
+
+              {/* The Share button of the Article */}
+              <TouchableHighlight>
+                <Image source={share} style={{ width: 20, height: 20 }} />
+              </TouchableHighlight>
+
+            </View>
+
+          </View>
+
+        </View>
+
+      </View>
+      {/* The End */}
+    </View>
+
+
+
+
+
+<View>
+      <View style={styles.View} >
+      <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')} activeOpacity={1}>
+          <ImageBackground style={styles.BgView} source={covideBg} imageStyle={{ borderRadius: 5 }} >
+            <View>
+              <Text style={styles.ViewText}></Text>
+              <Text style={styles.ViewText}></Text>
+            </View>
+          </ImageBackground>
+          </TouchableOpacity>
+      </View>
+    </View>
+
+
+
+
+
