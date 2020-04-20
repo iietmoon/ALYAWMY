@@ -86,20 +86,6 @@ export default function AppScreen({ navigation }) {
           <TechScreen />
         </Tab>
 
-        {/* Tab */}
-        <Tab heading={<TabHeading style={styles.TabHeading}>
-          <Text style={styles.TabText}>Économie</Text>
-        </TabHeading>}>
-          <Text>Hello World</Text>
-        </Tab>
-
-        {/* Tab */}
-        <Tab heading={<TabHeading style={styles.TabHeading}>
-        </TabHeading>}>
-          <NewsScreen />
-        </Tab>
-
-
       </Tabs>
     </Container>
 

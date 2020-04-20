@@ -105,7 +105,7 @@ class ArticlesView extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://newsapi.org/v2/top-headlines?language=fr&country=ma&apiKey=f55545e0de844834956ea64d4e3090e8')
+    return fetch('http://newsapi.org/v2/top-headlines?country=ma&apiKey=f55545e0de844834956ea64d4e3090e8')
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({

@@ -91,7 +91,7 @@ class TopHeadlines extends Component {
     }
 
     componentDidMount() {
-        return fetch('http://newsapi.org/v2/everything?q=Technologie&language=fr&apiKey=f55545e0de844834956ea64d4e3090e8')
+        return fetch('http://newsapi.org/v2/top-headlines?country=ma&category=technology&apiKey=20ae5207876d4e41a85823e9d12ca0dc')
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
