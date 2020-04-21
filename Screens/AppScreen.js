@@ -57,7 +57,7 @@ export default function AppScreen({ navigation }) {
   }
   return (
     <Container style={styles.TabContainer}>
-      <MainHeader />
+      
       <Tabs renderTabBar={() => <ScrollableTab />} tabBarUnderlineStyle={styles.tabBarUnder} initialPage={0}>
 
         {/* Tab */}

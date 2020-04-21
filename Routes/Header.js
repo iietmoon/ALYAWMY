@@ -53,11 +53,13 @@ class MainHeader extends Component {
 
           backgroundColor={'#0084ff'}
           // Search Icon
-          leftComponent={<Image source={search} style={{ width: 27, height: 27 }} />}
+          leftComponent={<TouchableHighlight activeOpacity={1} onPress={() => navigation.navigate('SearchScreen',{ title: 'search' })}>
+                            <Image source={search} style={{ width: 27, height: 27 }} />
+                         </TouchableHighlight>}
           // Logo Icon
           centerComponent={<Image source={logo} style={{ width: 80, height: 80 }} />}
           // Menu Icon
-          rightComponent={<TouchableHighlight onPress={() => navigation.openDrawer()}>
+          rightComponent={<TouchableHighlight activeOpacity={1} onPress={() => navigation.openDrawer()}>
             <Image source={menu} style={{ width: 35, height: 35 }} />
           </TouchableHighlight>}
         />

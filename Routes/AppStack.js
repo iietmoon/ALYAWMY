@@ -4,8 +4,10 @@ import { createAppContainer } from 'react-navigation';
 import AppScreen from '../Screens/AppScreen';
 import ExtraScreen from '../Screens/ExtraScreen';
 import ArticleScreen from '../Screens/ArticleScreen';
+import MainHeader from '../Routes/Header';
 import BackHeader from '../Routes/BackHeader';
 import ArtHeader from '../Routes/ArtHeader';
+import SearchScreen from '../Screens/SearchScreen';
 
 
 
@@ -13,8 +15,9 @@ const screens = {
   AppScreen: {
     screen: AppScreen,
     navigationOptions: {
-      headerShown: false,
+      header: () => <MainHeader />,
     }
+
   },
   ExtraScreen: {
     screen: ExtraScreen,
@@ -26,16 +29,17 @@ const screens = {
   ArticleScreen: {
     screen: ArticleScreen,
     navigationOptions: {
-      header: () => <ArtHeader/>,
+      header: () => <ArtHeader />,
     }
-
+  },
+  SearchScreen: {
+    screen: SearchScreen,
+    navigationOptions: {
+      header: () => <BackHeader />,
+    }
   },
 
-
 }
-
-
-
 
 const AppStack = createStackNavigator(screens);
 
