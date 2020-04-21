@@ -39,4 +39,4 @@ const screens = {
 
 const AppStack = createStackNavigator(screens);
 
-export default createAppContainer(AppStack);
+export default AppStack;

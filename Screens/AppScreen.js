@@ -10,6 +10,7 @@ import { Container, Header, Content, Tab, Tabs, ScrollableTab, TabHeading } from
 import NewsScreen from '../Screens/NewsScreen';
 import MondialScreen from '../Screens/MondialScreen';
 import SportsScreen from '../Screens/SportsScreen';
+import EcoScreen from '../Screens/EcoScreen';
 import TechScreen from '../Screens/TechScreen';
 
 //  import the components
@@ -78,6 +79,13 @@ export default function AppScreen({ navigation }) {
         </TabHeading>}>
           <SportsScreen />
         </Tab>
+        {/* Tab */}
+        <Tab heading={<TabHeading style={styles.TabHeading}>
+          <Text style={styles.TabText}>Économie</Text>
+        </TabHeading>}>
+          <EcoScreen />
+        </Tab>
+
 
         {/* Tab */}
         <Tab heading={<TabHeading style={styles.TabHeading}>

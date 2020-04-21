@@ -8,7 +8,7 @@ import * as Font from 'expo-font';
 import {AppLoading} from 'expo';
 
 //import from Components
-import AppStack from './Routes/AppStack';
+import RootNavigator from './Routes/Drawer';
 
 
 
@@ -32,7 +32,7 @@ export default function App({Navigation}) {
  if(fontsLoaded){
   return (
     
-        <AppStack/>
+        <RootNavigator/>
      
   );
  }
