@@ -1,76 +1,56 @@
 
-import React,{useState} from 'react';
-import { StyleSheet, Modal, Text, TouchableHighlight, View, Alert, Image, } from 'react-native';
-//Import the native-base
-import { Container, Content, Tab, Tabs, ScrollableTab, TabHeading } from 'native-base';
-import { WebView } from 'react-native-webview';
+import React, { useState } from 'react';
+import { View, StyleSheet, } from 'react-native';
 import { withNavigation } from 'react-navigation';
-// import the images
-import back from '../assets/icons/back.png';
-// import from Expo
-import * as Font from 'expo-font';
-import {AppLoading} from 'expo';
-
-//import from Components
-//import from react-native-elements
-import { Header, } from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
+import { Container, Header, Left, Body, Right, Title } from 'native-base';
 
 // StyleSheets
 
 const styles = StyleSheet.create({
-  header: {
-    backgroundColor: '#0084ff',
-    flexDirection: 'row',
-    height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  Txt: {
-    color: '#fff',
-    fontSize: 15,
-  },
-  TabHeading: {
+  input: {
     backgroundColor: '#fff',
-
-
-  },
-  TabText: {
-    color: '#1d1927',
-    fontFamily: 'Tajawal-Bold',
-    fontSize: 13
-  },
-  tabBarUnder: {
-    backgroundColor: '#0084ff'
-
-
-  },
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'space-between',
-  
+    marginHorizontal: 10,
+    marginVertical: 10,
+    borderRadius: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
     },
-    video: {
-      marginTop: 20,
-      maxHeight: 200,
-      width: 320,
-      flex: 1
-    }
-  });
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
+  }
+});
 
 
 
 
 
- class SearchScreen extends React.Component {
+
+class SearchScreen extends React.Component {
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
 
   render() {
+    const { search } = this.state;
 
     return (
-        
-        <Text>Search screen</Text>
+      <SearchBar
+        platform={"android"}
+        placeholder="Rechercher..."
+        onChangeText={this.updateSearch}
+        value={search}
+        containerStyle={styles.input}
+      />
 
-      
     );
   }
 }

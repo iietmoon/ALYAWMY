@@ -1,12 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
 import AppScreen from '../Screens/AppScreen';
 import ExtraScreen from '../Screens/ExtraScreen';
 import ArticleScreen from '../Screens/ArticleScreen';
 import MainHeader from '../Routes/Header';
 import BackHeader from '../Routes/BackHeader';
 import ArtHeader from '../Routes/ArtHeader';
+import SearchHead from '../Routes/Search'
 import SearchScreen from '../Screens/SearchScreen';
 
 
@@ -35,9 +35,10 @@ const screens = {
   SearchScreen: {
     screen: SearchScreen,
     navigationOptions: {
-      header: () => <BackHeader />,
+      header: () => <SearchHead />,
     }
   },
+
 
 }
 

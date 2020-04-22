@@ -1,6 +1,6 @@
 //Import the React native
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { StyleSheet, Share, Text, TouchableOpacity, View, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 // import the images
 import back from '../assets/icons/back.png';
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     Title:{
-        fontSize: 18,
+        fontSize: 17,
         color: '#fff'
     }
 });
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
 // Main  view of the component of The Header and full screen Menu
 
- function BackHeader({ navigation }) {
+ function SearchHead({ navigation }) {
 
     const Title =  navigation.getParam('title');
     // Return Method
@@ -47,24 +47,11 @@ const styles = StyleSheet.create({
                 leftComponent={<TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={1}>
                  <Image source={back} style={{ width: 23, height: 23 }} />
                 </TouchableOpacity>}
+                centerComponent={<Text style={styles.Title}>Rechercher une source...</Text>}
                 
-                // Title
-                centerComponent={ <Text style={styles.Title}>{Title}</Text> }
-
-                // Title
-                rightComponent={ <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={1}>
-                <Image source={share} style={{ width: 23, height: 23 }} />
-               </TouchableOpacity> }
-
             />
-
-            {/* Header End */}
-
-            {/* Full Screen Menu View */}
-
-            {/* Start of the Modal */}
         </View>
     );
 }
 
-export default withNavigation(BackHeader);
+export default withNavigation(SearchHead);

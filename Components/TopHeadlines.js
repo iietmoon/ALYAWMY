@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, Alert, Modal, TouchableHighlight, ImageBackground, ScrollView } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
 import { withNavigation } from 'react-navigation';
-import searchEngine from '../assets/icons/search_engine.png';
 import moment from 'moment/min/moment-with-locales'
 import Thumb from '../assets/Default_Image_Thumbnail.png'
 

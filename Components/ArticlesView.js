@@ -4,7 +4,6 @@ import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "reac
 import { withNavigation } from 'react-navigation';
 import { Text, Thumbnail } from 'native-base';
 import share from '../assets/icons/share_gray.png';
-import searchEngine from '../assets/icons/search_engine.png';
 import moment from 'moment/min/moment-with-locales'
 import Thumb from '../assets/Default_Image_Thumbnail.png'
 // StyleSheets
