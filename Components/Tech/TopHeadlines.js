@@ -1,76 +1,37 @@
 
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Text, Alert, Modal, TouchableHighlight, ImageBackground, ScrollView } from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
+import { View, Image, StyleSheet, Text, Alert, Modal, TouchableHighlight, ImageBackground } from "react-native";
+import covideBg from '../../assets/Content/CovideBg.png';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { withNavigation } from 'react-navigation';
-import Thumb from '../../assets/Default_Image_Thumbnail.png'
-
-
 // StyleSheets
 
 const styles = StyleSheet.create({
-    DfView: {
-        marginVertical: 10,
-        marginHorizontal: 10,
-        borderRadius: 5,
-        paddingVertical: 10,
-        paddingHorizontal: 10,
-        height: 200,
-        backgroundColor: '#eee',
-        justifyContent: 'flex-end'
+  View: {
+    marginVertical: 5,
+    marginHorizontal: 10,
+    borderRadius: 20,
+    height: 200,
+    shadowOffset: {
+      width: 0,
+      height: 10,
     },
-    DfTitle: {
-        backgroundColor: '#dfdfdf',
-        borderRadius: 2
-    },
-    DfLink: {
-        backgroundColor: '#dfdfdf',
-        borderRadius: 2,
-        marginTop: 3,
-        width: 100
-
-    },
-    BannerView: {
-        marginVertical: 10,
-        marginHorizontal: 10,
-        borderRadius: 5,
-        height: 200,
-        shadowOffset: {
-            width: 0,
-            height: 10,
-        },
-        shadowOpacity: 1,
-        shadowRadius: 3.80,
-        elevation: 5,
-    },
-    BgView: {
-        height: 200,
-    },
-    OverlyView: {
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        height: 200,
-        justifyContent: 'flex-end',
-        alignItems: 'flex-start',
-        borderRadius: 5,
-    },
-    insideView: {
-        borderRadius: 5,
-
-    },
-    TitleView: {
-        fontFamily: 'Tajawal-Bold',
-        color: '#fff',
-        fontSize: 20
-    },
-    SiteView: {
-        fontFamily: 'Tajawal-Medium',
-        color: '#bdbdbd',
-        fontSize: 15
-    }
-
+    shadowOpacity: 1,
+    shadowRadius: 3.80,
+    elevation: 5,
+  },
+  BgView: {
+    paddingHorizontal: 30,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    flexDirection: 'row',
+    height: 200,
+  },
+  ViewImg: {
+    width: 80,
+    height: 130,
+  },
 });
-
 
 // javascript fuctions
 
@@ -80,85 +41,66 @@ const styles = StyleSheet.create({
 
 class TopHeadlines extends Component {
 
-    //start of the fetch of data from News API
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoading: true,
-            data: null,
-            loadingImage: false
-        }
+  //start of the fetch of data from News API
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      data: null,
     }
+  }
 
-    componentDidMount() {
-        return fetch('http://newsapi.org/v2/top-headlines?country=ma&category=technology&apiKey=20ae5207876d4e41a85823e9d12ca0dc')
-            .then((response) => response.json())
-            .then((responseJson) => {
-                this.setState({
-                    isLoading: false,
-                    loadingImage: true,
-                    data: responseJson.articles,
-                })
-            })
-            .catch((error) => {
-                console.log(error)
-            });
+  componentDidMount() {
+    return fetch('https://api.by-iemo.com/alyawmy/tech_header.json')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          isLoading: false,
+          data: responseJson.Extra,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      });
+  }
+  
+
+  render() {
+    const navigation= this.props.navigation;
+    if (this.state.isLoading) {
+      return (
+        <View>
+
+        </View>
+      )
     }
+    else {
+      let Articles = this.state.data.map((val, key) => {
+        return <View key={key}>
 
-    render() {
-
-        const navigation = this.props.navigation;
-
-        if (this.state.isLoading) {
-            return (
-
+          {/* The View of the Article */}
+          <View style={styles.View} >
+              <ImageBackground style={styles.BgView} source={{ uri: val.Bg }} imageStyle={{ borderRadius: 5 }} >
                 <View>
-                    <View style={styles.DfView}>
-                        <View style={styles.DfTitle}>
-                            <Text></Text>
-                        </View>
-                        <View style={styles.DfLink}>
-                            <Text></Text>
-                        </View>
-                    </View>
+                  <Text style={styles.ViewText}></Text>
+                  <Text style={styles.ViewText}></Text>
                 </View>
-
-            )
-        }
-        else {
-            let TopHeadlines = this.state.data.map((val, key) => {
-                return <View key={key[3]}>
-                    <View style={styles.BannerView}>
-                        <ImageBackground style={styles.BgView}
-                            source={{ uri: val.urlToImage }}
-                            imageStyle={{ borderRadius: 5 }}>
-                            <LinearGradient
-                                colors={['transparent', 'rgba(0,0,0,1)']}
-                                style={styles.OverlyView}>
-                                <View style={styles.insideView}>
-                                    <Text style={styles.TitleView}>
-                                        {val.title}
-                                    </Text>
-                                    <Text style={styles.SiteView}>
-                                        {val.source.name}
-                                    </Text>
-                                </View>
-                            </LinearGradient>
-                        </ImageBackground>
-                    </View>
-
-                </View>
-            });
+              </ImageBackground>
+          </View>
+          {/* The End */}
+        </View>
+      });
 
 
-            return (
-                <View style={{ flexDirection: 'row' }}>
-                    {TopHeadlines}
-                </View>
-            )
-        }
+      return (
+        <View >
+          {Articles}
+        </View>
 
+      )
     }
+
+  }
 }
 
 
