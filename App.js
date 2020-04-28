@@ -7,10 +7,10 @@ import { StyleSheet, Text, View } from 'react-native'
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
 
-// import from Components
+// import the Components
 import RootNavigator from './Routes/Drawer'
 
-// Fonts functions from local folder
+// Fonts call from local folder
 const getFonts = () => Font.loadAsync({
   'Tajawal-Black': require('./assets/fonts/Tajawal-Black.ttf'),
   'Tajawal-Bold': require('./assets/fonts/Tajawal-Bold.ttf'),

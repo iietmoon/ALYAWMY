@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet, Image, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, StyleSheet, Image, Text, TouchableOpacity, ImageBackground, Share, Linking } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { LinearGradient } from 'expo-linear-gradient'
 
@@ -54,7 +54,26 @@ class DrawerContent extends React.Component {
 
   render () {
     // navigation prop
-    const navigation = this.props.navigation
+    const navigation = this.props.navigation;
+    const onShare = async () => {
+    try {
+      const result = await Share.share({
+        message:
+          'قم بتحميل أفضل تطبيق للأخبار المغربية و العالمية حصريا عند اليومي https://api.by-iemo.com/alyawmy',
+      });
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // shared with activity type of result.activityType
+        } else {
+          // shared
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // dismissed
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
     return (
       <View>
         <ImageBackground style={styles.BgView} source={{ uri: 'https://images.pexels.com/photos/3049885/pexels-photo-3049885.jpeg?cs=srgb&dl=people-at-the-plaza-3049885.jpg&fm=jpg' }}>
@@ -114,7 +133,7 @@ class DrawerContent extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')} activeOpacity={0.9}>
+          <TouchableOpacity onPress={onShare}>
             <View style={styles.LinkView}>
               <Image source={shared} style={{width:20 , height: 20, paddingHorizontal: 10}} />
               <Text style={styles.LinkTitle}>
@@ -122,7 +141,7 @@ class DrawerContent extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')} activeOpacity={0.9}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://www.instagram.com/by_iemo/')} activeOpacity={0.9}>
             <View style={styles.LinkView}>
               <Image source={developer} style={{width:20 , height: 20, paddingHorizontal: 10}} />
               <Text style={styles.LinkTitle}>     

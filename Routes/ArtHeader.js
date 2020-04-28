@@ -37,6 +37,27 @@ const styles = StyleSheet.create({
  function ArtHeader({ navigation }) {
 
     const Title =  navigation.getParam('title');
+    const UrlShare = navigation.getParam('Url');
+    const message = "Lire l'article sur Alyawmy";
+    const download= "Télécharger Alyawmy sur https://api.by-iemo.com/alyawmy"
+    const onShare = async () => {
+        try {
+          const result = await Share.share({
+            message: message+"\n"+UrlShare + "\n" + download,
+          });
+          if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+              // shared with activity type of result.activityType
+            } else {
+              // shared
+            }
+          } else if (result.action === Share.dismissedAction) {
+            // dismissed
+          }
+        } catch (error) {
+          alert(error.message);
+        }
+      };
     // Return Method
     return (
 
@@ -56,7 +77,10 @@ const styles = StyleSheet.create({
                 centerComponent={<Text numberOfLines={1} style={styles.Title} > {Title} </Text>}
 
 
-                rightComponent={ <Image source={share} style={{ width: 25, height: 25 }} /> }
+                rightComponent={ <TouchableOpacity onPress={onShare}> 
+                <Image source={share} style={{ width: 25, height: 25 }} />
+                </TouchableOpacity>
+                 }
 
             />
 
