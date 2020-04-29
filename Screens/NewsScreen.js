@@ -1,6 +1,6 @@
 // import the  libraries 
 import React from 'react';
-import { ScrollView, View, StyleSheet } from 'react-native';
+import { ScrollView, View, StyleSheet, Text} from 'react-native';
 //import Admob 
 import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
 // import the Components
@@ -15,7 +15,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: "center",
     alignItems: "center"
-  }
+  },
+  bottomBanner: {
+    position: "absolute",
+    bottom: 0
+  },
 });
 
 // The main screen
@@ -36,15 +40,10 @@ function NewsScreen({ navigation }) {
            servePersonalizedAds/>
       </View>
       {/* Articles component */}
-      <ArticlesView />
-      {/* Ads */}
-      <View style={styles.AdsView}>
-         <AdMobBanner
-           bannerSize="largeBanner"
-           adUnitID="ca-app-pub-3940256099942544/6300978111"
-           testDeviceID="EMULATOR"
-           servePersonalizedAds/>
+      <ArticlesView/>
+      <View style={{height:70}}>
       </View>
+      {/* Ads */}
     </ScrollView>
 
   );

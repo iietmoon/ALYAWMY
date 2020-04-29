@@ -3,6 +3,7 @@ import 'react-native-gesture-handler'
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
+
 // import from Expo
 import * as Font from 'expo-font'
 import { AppLoading } from 'expo'
@@ -21,7 +22,6 @@ const getFonts = () => Font.loadAsync({
   'Tajawal-Regular': require('./assets/fonts/Tajawal-Regular.ttf')
 
 })
-
 // The Main View
 export default function App ({Navigation}) {
   const [fontsLoaded, setFontsLoaded] = useState(false)

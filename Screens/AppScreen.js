@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { WebView } from 'react-native-webview';
-
+//import Admob 
+import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
 //Import the native-base
 import { Container, Header, Content, Tab, Tabs, ScrollableTab, TabHeading } from 'native-base';
 
@@ -43,9 +44,11 @@ const styles = StyleSheet.create({
   },
   tabBarUnder: {
     backgroundColor: '#0084ff'
-
-
-  }
+  },
+  bottomBanner: {
+    position: "absolute",
+    bottom: 0
+  },
 });
 
 //Main view
@@ -95,6 +98,13 @@ export default function AppScreen({ navigation }) {
         </Tab>
 
       </Tabs>
+      <AdMobBanner
+          style={styles.bottomBanner}
+          bannerSize="fullBanner"
+          adUnitID="ca-app-pub-3940256099942544/6300978111"
+          // Test ID, Replace with your-admob-unit-id
+          testDeviceID="EMULATOR"
+        />
     </Container>
 
   );
