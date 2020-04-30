@@ -160,7 +160,7 @@ class ArticlesView extends Component {
 
                     {/* The Title of the Article */}
                     <Text style={styles.ArtTitle} numberOfLines={3}>{val.title}</Text>
-                    <Text style={styles.ArtSrc} numberOfLines={1}>{val.source.name} • {moment.locale('fr'), moment(val.publishedAt, "YYYYMMDD").fromNow()} </Text>
+                    <Text style={styles.ArtSrc} numberOfLines={1}>{val.source.name} • {moment.locale('fr'), moment(val.publishedAt, "YYYYMMDDhhmmss").fromNow()} </Text>
                   </View>
                 </View>
 

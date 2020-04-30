@@ -54,6 +54,7 @@ class DrawerContent extends React.Component {
 
   render () {
     // navigation prop
+    const urlValue ="https://alyawamy.by-iemo.com/privacy-policy.html"
     const navigation = this.props.navigation;
     const onShare = async () => {
     try {
@@ -88,7 +89,7 @@ class DrawerContent extends React.Component {
           <Text style={styles.Titles}>
             Plus de contenu
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')}activeOpacity={0.9}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://alyawamy.by-iemo.com')} activeOpacity={0.9}>
             <View style={styles.LinkView}>
               <Image source={streaming} style={styles.LinkIcon} />
               <Text style={styles.LinkTitle}>
@@ -96,7 +97,7 @@ class DrawerContent extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')}activeOpacity={0.9}>
+          <TouchableOpacity onPress={() => Linking.openURL('https://alyawamy.by-iemo.com')} activeOpacity={0.9}>
             <View style={styles.LinkView}>
               <Image source={mail} style={{width:20 , height: 20, paddingHorizontal: 10}} />
               <Text style={styles.LinkTitle}>
@@ -117,7 +118,7 @@ class DrawerContent extends React.Component {
           <Text style={styles.Titles}>
             À propos de nous
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')}activeOpacity={0.9}>
+          <TouchableOpacity  onPress={() => Linking.openURL('https://alyawamy.by-iemo.com')} activeOpacity={0.9}>
             <View style={styles.LinkView}>
               <Image source={megaphone} style={styles.LinkIcon} />
               <Text style={styles.LinkTitle}>
@@ -125,7 +126,7 @@ class DrawerContent extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')}activeOpacity={0.9}>
+          <TouchableOpacity onPress={() => navigation.navigate('PrivacyPolicy', {title: 'Politique de...' })}activeOpacity={0.9}>
             <View style={styles.LinkView}>
               <Image source={shield} style={{width:20 , height: 20, paddingHorizontal: 10}} />
               <Text style={styles.LinkTitle}>

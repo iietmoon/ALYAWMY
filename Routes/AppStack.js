@@ -8,6 +8,7 @@ import BackHeader from '../Routes/BackHeader';
 import ArtHeader from '../Routes/ArtHeader';
 import SearchHead from '../Routes/Search'
 import SearchScreen from '../Screens/SearchScreen';
+import PrivacyPolicy from '../Screens/PrivacyPolicy';
 
 
 
@@ -37,6 +38,13 @@ const screens = {
     navigationOptions: {
       header: () => <SearchHead />,
     }
+  },
+  PrivacyPolicy: {
+    screen: PrivacyPolicy,
+    navigationOptions: {
+      header: () => <BackHeader />,
+    }
+
   },
 
 
