@@ -101,7 +101,7 @@ export default function AppScreen({ navigation }) {
       <AdMobBanner
           style={styles.bottomBanner}
           bannerSize="fullBanner"
-          adUnitID="ca-app-pub-3940256099942544/6300978111"
+          adUnitID="ca-app-pub-2406276559366897/2211929594"
           // Test ID, Replace with your-admob-unit-id
           testDeviceID="EMULATOR"
         />

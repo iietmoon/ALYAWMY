@@ -32,7 +32,7 @@ function SportsScreen({ navigation }) {
             <View style={styles.AdsView}>
               <AdMobBanner
                 bannerSize="largeBanner"
-                adUnitID="ca-app-pub-3940256099942544/6300978111"
+                adUnitID="ca-app-pub-2406276559366897/2211929594"
                 testDeviceID="EMULATOR"
                 servePersonalizedAds/>
             </View>

@@ -8,7 +8,7 @@
     "android": {
       "package": "com.alyawmy.news",
       "config": {
-        "googleMobileAdsAppId": "ca-app-pub-3940256099942544~3347511713"
+        "googleMobileAdsAppId": "ca-app-pub-2406276559366897~3525011261"
       }
     },
     "version": "1.0.0",
