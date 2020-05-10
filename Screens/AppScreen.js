@@ -1,12 +1,10 @@
 //Import the React native
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { WebView } from 'react-native-webview';
-//import Admob 
-import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
+import { StyleSheet, Text } from 'react-native';
 //Import the native-base
-import { Container, Header, Content, Tab, Tabs, ScrollableTab, TabHeading } from 'native-base';
-
+import { Container, Tab, Tabs, ScrollableTab, TabHeading } from 'native-base';
+//import the banner
+import FixedBanner from '../Components/Admob/fixedBanner'
 //  import the Screens
 import NewsScreen from '../Screens/NewsScreen';
 import MondialScreen from '../Screens/MondialScreen';
@@ -44,10 +42,6 @@ const styles = StyleSheet.create({
   },
   tabBarUnder: {
     backgroundColor: '#0084ff'
-  },
-  bottomBanner: {
-    position: "absolute",
-    bottom: 0
   },
 });
 
@@ -96,15 +90,8 @@ export default function AppScreen({ navigation }) {
         </TabHeading>}>
           <TechScreen />
         </Tab>
-
       </Tabs>
-      <AdMobBanner
-          style={styles.bottomBanner}
-          bannerSize="fullBanner"
-          adUnitID="ca-app-pub-2406276559366897/2211929594"
-          // Test ID, Replace with your-admob-unit-id
-          testDeviceID="EMULATOR"
-        />
+      <FixedBanner/>
     </Container>
 
   );

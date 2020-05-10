@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 //import Admob 
-import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
+import Banner from '../Components/Admob/banner';
 // import the Components
 import ArticlesView from '../Components/Mondial/ArticlesView';
 import TopHeadlines from '../Components/Mondial/TopHeadlines';
@@ -29,13 +29,7 @@ function MondialScreen({ navigation }) {
       {/* Extra component */}
       <Extra />
       {/* Ads */}
-      <View style={styles.AdsView}>
-         <AdMobBanner
-           bannerSize="largeBanner"
-           adUnitID="ca-app-pub-2406276559366897/2211929594"
-           testDeviceID="EMULATOR"
-           servePersonalizedAds/>
-      </View>
+      <Banner />
       {/* Articles component */}
       <ArticlesView />
       {/* Ads */}

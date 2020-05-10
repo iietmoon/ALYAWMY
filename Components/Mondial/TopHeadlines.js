@@ -1,8 +1,6 @@
 
 import React, { Component } from 'react';
-import { View, Image, StyleSheet, Text, Alert, Modal, TouchableHighlight, ImageBackground } from "react-native";
-import covideBg from '../../assets/Content/CovideBg.png';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { View, StyleSheet, Text, ImageBackground } from "react-native";
 import { withNavigation } from 'react-navigation';
 // StyleSheets
 

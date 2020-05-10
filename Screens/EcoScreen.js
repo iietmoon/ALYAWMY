@@ -1,8 +1,8 @@
 // import the  libraries 
-import React, { Component } from 'react';
+import React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 //import Admob 
-import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
+import Banner from '../Components/Admob/banner';
 // import the Components
 import ArticlesView from '../Components/Economy/ArticlesView';
 import TopHeadlines from '../Components/Economy/TopHeadlines';
@@ -28,13 +28,7 @@ function EcoScreen({ navigation }) {
       {/* Extra component */}
       <Extra />
       {/* Ads */}
-      <View style={styles.AdsView}>
-         <AdMobBanner
-           bannerSize="largeBanner"
-           adUnitID="ca-app-pub-2406276559366897/2211929594"
-           testDeviceID="EMULATOR"
-           servePersonalizedAds/>
-      </View>
+      <Banner />
       {/* Articles component */}
       <ArticlesView />
       {/* Ads */}

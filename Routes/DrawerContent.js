@@ -105,14 +105,6 @@ class DrawerContent extends React.Component {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('ExtraScreen')} activeOpacity={0.9}>
-            <View style={styles.LinkView}>
-              <Image source={internet} style={{width:20 , height: 20, paddingHorizontal: 10}} />
-              <Text style={styles.LinkTitle}>
-                 Sources d'actualités
-              </Text>
-            </View>
-          </TouchableOpacity>
         </View>
         <View>
           <Text style={styles.Titles}>

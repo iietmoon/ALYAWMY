@@ -1,30 +1,16 @@
 // import the  libraries 
-import React from 'react';
-import { ScrollView, View, StyleSheet, Text} from 'react-native';
-//import Admob 
-import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
+import React from 'react'
+import { ScrollView, View, StyleSheet, Text } from 'react-native'
+// import Admob 
+import Banner from '../Components/Admob/banner';
 // import the Components
-import ArticlesView from '../Components/ArticlesView';
-import TopHeadlines from '../Components/TopHeadlines';
-import Extra from '../Components/extra/Extra';
-import { withNavigation } from 'react-navigation';
-
-//Stylesheet
-const styles = StyleSheet.create({
-  AdsView:{
-    marginVertical: 10,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  bottomBanner: {
-    position: "absolute",
-    bottom: 0,
-
-  },
-});
+import ArticlesView from '../Components/ArticlesView'
+import TopHeadlines from '../Components/TopHeadlines'
+import Extra from '../Components/extra/Extra'
+import { withNavigation } from 'react-navigation'
 
 // The main screen
-function NewsScreen({ navigation }) {
+function NewsScreen ({ navigation }) {
   return (
 
     <ScrollView>
@@ -33,20 +19,14 @@ function NewsScreen({ navigation }) {
       {/* Extra component */}
       <Extra />
       {/* Ads */}
-      <View style={styles.AdsView}>
-         <AdMobBanner
-           bannerSize="largeBanner"
-           adUnitID="ca-app-pub-2406276559366897/2211929594"
-           testDeviceID="EMULATOR"
-           servePersonalizedAds/>
-      </View>
+      <Banner />
       {/* Articles component */}
       <ArticlesView/>
-      <View style={{height:70}}>
+      <View style={{height: 70}}>
       </View>
       {/* Ads */}
     </ScrollView>
 
-  );
+  )
 }
-export default withNavigation(NewsScreen);
+export default withNavigation(NewsScreen)

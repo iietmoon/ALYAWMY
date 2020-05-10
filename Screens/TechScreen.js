@@ -1,13 +1,12 @@
 // import the  libraries 
-import React, { Component } from 'react';
+import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 //import Admob 
-import {AdMobBanner, AdMobInterstitial,  PublisherBanner,  AdMobRewarded} from 'expo-ads-admob';
+import Banner from '../Components/Admob/banner';
 // import the Components
 import ArticlesView from '../Components/Tech/ArticlesView';
 import TopHeadlines from '../Components/Tech/TopHeadlines';
 import Extra from '../Components/extra/Extra';
-import { TouchableHighlight, } from 'react-native-gesture-handler';
 import { withNavigation } from 'react-navigation';
 import { View } from 'native-base';
 //Stylesheet
@@ -29,13 +28,7 @@ function TechScreen({ navigation }) {
       {/* Extra component */}
       <Extra />
       {/* Ads */}
-      <View style={styles.AdsView}>
-         <AdMobBanner
-           bannerSize="largeBanner"
-           adUnitID="ca-app-pub-2406276559366897/2211929594"
-           testDeviceID="EMULATOR"
-           servePersonalizedAds/>
-      </View>
+      <Banner />
       {/* Articles component */}
       <ArticlesView />
       {/* Ads */}

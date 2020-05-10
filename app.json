@@ -7,6 +7,7 @@
     "platforms": ["ios", "android", "web"],
     "android": {
       "package": "com.alyawmy.news",
+      "versionCode": 1.0,
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-2406276559366897~3525011261"
       }

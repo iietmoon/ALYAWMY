@@ -2,8 +2,7 @@
 import React, { Component, useState } from 'react';
 import { View, StyleSheet, TouchableOpacity, Image, ImageBackground } from "react-native";
 import { withNavigation } from 'react-navigation';
-import { Text, Thumbnail } from 'native-base';
-import share from '../assets/icons/share_gray.png';
+import { Text } from 'native-base';
 import moment from 'moment/min/moment-with-locales'
 import Thumb from '../assets/Default_Image_Thumbnail.png'
 // StyleSheets
