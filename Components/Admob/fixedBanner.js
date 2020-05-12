@@ -10,10 +10,12 @@ import { withNavigation } from 'react-navigation'
 const styles = StyleSheet.create({
     bottomBanner: {
         paddingTop:3,
-        backgroundColor: '#dee2e6',
+        paddingBottom: 3,
+        backgroundColor: '#f8f9fa',
         position: "absolute",
+        alignContent: 'center',
         bottom: 0,
-        height: 63,
+        height: 56,
         shadowColor: "#000",
         shadowOffset: {
 	        width: 0,
@@ -30,10 +32,9 @@ function FixedBanner() {
   return (
       <View style={styles.bottomBanner}>
         <AdMobBanner
-          bannerSize="fullBanner"
+          bannerSize="smartBannerPortrait"
           adUnitID="ca-app-pub-2406276559366897/2211929594"
           // Test ID, Replace with your-admob-unit-id
-          testDeviceID="EMULATOR"
         />
       </View>
   )

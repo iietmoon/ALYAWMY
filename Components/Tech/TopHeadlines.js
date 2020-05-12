@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     marginHorizontal: 10,
     borderRadius: 20,
-    height: 200,
+    height: 150,
     shadowOffset: {
       width: 0,
       height: 10,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     flexDirection: 'row',
-    height: 200,
+    height: 150,
   },
   ViewImg: {
     width: 80,

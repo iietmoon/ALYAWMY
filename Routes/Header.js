@@ -52,10 +52,6 @@ class MainHeader extends Component {
         <Header
 
           backgroundColor={'#0084ff'}
-          // Search Icon
-          leftComponent={<TouchableHighlight activeOpacity={1} onPress={() => navigation.navigate('SearchScreen',{ title: 'rechercher dans les sources' })}>
-                            <Image source={search} style={{ width: 25, height: 25 }} />
-                         </TouchableHighlight>}
           // Logo Icon
           centerComponent={<Image source={logo} style={{ width: 80, height: 80 }} />}
           // Menu Icon

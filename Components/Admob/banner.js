@@ -33,7 +33,6 @@ function Banner() {
         <AdMobBanner
           bannerSize='largeBanner'
           adUnitID='ca-app-pub-2406276559366897/2211929594'
-          testDeviceID='EMULATOR'
           servePersonalizedAds/>
       </View>
   )
