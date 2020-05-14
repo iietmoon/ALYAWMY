@@ -13,28 +13,26 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
-    backgroundColor: '#fff',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
   },
 })
 
+
+
 // The main screen
-function Banner() {
-  return (
-      <View style={styles.AdsView}>
+
+export default class Banner extends React.Component {
+  bannerError() {
+      console.log("An error");
+      return;
+    } 
+    render() {
+      return (
+        <View style={styles.AdsView}>
         <AdMobBanner
           bannerSize='largeBanner'
           adUnitID='ca-app-pub-2406276559366897/2211929594'
           servePersonalizedAds/>
       </View>
-  )
-}
-export default withNavigation(Banner)
+      );
+    }
+  }

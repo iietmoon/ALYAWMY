@@ -22,9 +22,10 @@ const getFonts = () => Font.loadAsync({
   'Tajawal-Regular': require('./assets/fonts/Tajawal-Regular.ttf')
 
 })
+
 // The Main View
 export default function App ({Navigation}) {
-  const [fontsLoaded, setFontsLoaded] = useState(false)
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
   if (fontsLoaded) {
     return (

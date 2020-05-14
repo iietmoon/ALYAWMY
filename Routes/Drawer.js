@@ -15,7 +15,7 @@ const RootNavigator = createDrawerNavigator({
     },
     {  
       contentComponent: DrawerContent,
-      drawerWidth: 250,
+      drawerWidth: window.innerWidth,
       drawerBackgroundColor: '#fff',
 
     }
